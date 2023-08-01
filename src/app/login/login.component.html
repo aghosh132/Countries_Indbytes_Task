@@ -1,0 +1,45 @@
+<section>    
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Sign In</h2>
+            <form [formGroup]="loginForm" action="">
+                <div class="inputBx">
+                    <span>Username</span>
+                    <input formControlName="username"  id="s2" type="text" name="username1">
+                </div>
+                <div *ngIf="this.loginForm.get('username')?.errors && this.loginForm.get('username')?.touched" >
+                    <p class="text-danger"> include characters only</p>
+                  </div>
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input formControlName="password"  id="s1" type="password" name="password1">
+                </div>
+                <div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched">
+                    <p class="text-danger"> include characters only</p>
+                  </div>
+                <div class="remember">
+                    <label for=""><input type="checkbox">Keep Me Signed In</label>
+
+                </div>
+                <div class="inputBx">
+                    <input (click)="login()" type="submit" value="Login">
+                </div>
+                <div class="inputBx">
+                    <p>New User? <a href="#">Create an account</a></p>
+                </div>
+            </form>
+            <h3>
+                <div class="hr-sect">Or Sign In With</div>
+            </h3>
+            <ul class="sci">
+                <li><span class="fa fa-google"></span></li>            
+<li><span class="fa fa-instagram"></span></li>
+<li><span class="fa fa-facebook"></span></li>
+<li><span class="fa fa-twitter"></span> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="imgBx">
+        <img src="assets/user.jpg" alt="">
+    </div>
+</section>
